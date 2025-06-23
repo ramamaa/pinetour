@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanuman:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanuman:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .location-container {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        padding: 65px 0;
+      }
+      .location {
+        width: 275.49px;
+        height: 370px;
+        background-size: cover;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 8px 8px rgba(41, 114, 139, 0.25),
+          -8px -8px 0 rgba(31, 114, 170, 0.46);
+        position: relative;
+      }
+      .location-bg {
+        background-color: rgba(41, 41, 41, 0.4);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        border-radius: 40px;
+        opacity: 0;
+        transition: opacity 300ms;
+      }
+      .location-text {
+        position: relative;
+        z-index: 10;
+        width: 232px;
+        color: rgba(253, 253, 254, 0.8);
+        transition: color 300ms;
+        font-size: 37px;
+        font-family: "Bebas Neue";
+        font-weight: 400;
+        text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.65);
+      }
+      .location:hover .location-bg {
+        opacity: 1;
+      }
+      .location:hover .location-text {
+        color: white;
+      }
+      /* .Roadmap-container {
+        width: 513px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 120px;
+        position: relative;
+      }
+      .Roadmap {
+        width: 513px;
+        height: 112px;
+        border-radius: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 30px;
+        padding-right: 30px;
+        position: relative;
+        border: 4px transparent solid;
+      }
+      .roadmap-text {
+        text-align: start;
+        font-size: 24px;
+        font-family: Inter;
+        font-weight: 500;
+      }
+
+      .day-container {
+        width: 52px;
+        height: 48px;
+        background-color: rgba(247, 246, 243, 1);
+        border-radius: 26px;
+      }
+      .day-text {
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 18px;
+        padding-left: 8px;
+      }
+      .Region-text {
+        font-family: Montserrat;
+        font-size: 12px;
+      }
+      .Roadmap-bg {
+        position: absolute;
+        opacity: 0;
+      }
+      .Roadmap:hover .Roadmap-bg {
+        opacity: 1;
+      }
+
+      .Roadmap:hover {
+        border: 4px rgba(255, 255, 255, 1) solid;
+      }
+      .Roadmap-images {
+        position: absolute;
+        width: 245px;
+        height: 245px;
+        border-radius: 50%;
+        background-size: cover;
+        display: none;
+      }
+      .Roadmap-container .Roadmap-images {
+        display: block;
+      } */
+
+      .destination-container {
+        background-image: url(images/Roadmap\ image.png);
+        position: relative;
+      }
+      .destination-header {
+        text-align: center;
+        margin: 0;
+        font-size: 42px;
+        font-family: Inter;
+        font-weight: 600;
+      }
+      .destination-p {
+        text-align: center;
+        font-size: 20px;
+        font-family: Inter;
+        font-weight: 500;
+        color: rgba(24, 24, 27, 0.7);
+        margin: 0;
+      }
+      .destination {
+        width: 513px;
+        height: 112px;
+        box-sizing: border-box;
+        background-color: rgba(238, 233, 217, 1);
+        border-radius: 120px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px;
+        border: 4px solid transparent;
+        margin-left: 120px;
+      }
+      .destination:hover {
+        border: 4px solid white;
+      }
+      .destination-text {
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .destination-city {
+        font-size: 12px;
+        font-family: Montserrat;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .destination-city::before {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        background-image: url(images/icon1.png);
+        background-size: contain;
+      }
+      .destination-day {
+        width: 52px;
+        height: 52px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+      .destination-image {
+        width: 245px;
+        height: 245px;
+        border-radius: 50%;
+        background-size: cover;
+        position: absolute;
+        display: none;
+      }
+      .destination:hover .destination-image {
+        display: block;
+      }
+      .price-container {
+        background-image: url(images/footer.png);
+      }
+      .price-card {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 79px;
+      }
+      .price-h3 {
+        margin: 0;
+        font-family: Inter;
+        font-weight: 600;
+        font-size: 42px;
+        text-align: center;
+        padding-top: 40px;
+      }
+      .price-p {
+        font-size: 20px;
+        font-family: Inter;
+        font-weight: 500;
+        color: rgba(24, 24, 27, 0.7);
+        text-align: center;
+      }
+      .price {
+        padding: 24px;
+        width: 384px;
+        height: 527px;
+        border-radius: 40px;
+        background-color: rgba(250, 251, 252, 1);
+        position: relative;
+      }
+      .price:hover {
+        box-shadow: 8px 8px rgba(41, 114, 139, 0.25),
+          -8px -8px rgba(46, 65, 71, 0.4);
+      }
+      .price:hover .price-button {
+        background-color: rgba(24, 24, 27, 0.9);
+        color: white;
+      }
+
+      .price-content-header {
+        display: flex;
+        gap: 16px;
+        margin-top: 32px;
+        margin-bottom: 24px;
+      }
+
+      .price-details {
+        margin-top: 12px;
+        margin-bottom: 37px;
+      }
+      .price-section {
+        margin-bottom: 20px;
+      }
+
+      .price-header-text {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .price-500 {
+        font-size: 40px;
+        font-weight: 600;
+        color: rgba(48, 48, 48, 1);
+      }
+      .price-es {
+        font-weight: 500;
+        font-family: Inter;
+        font-size: 16px;
+        color: rgba(145, 145, 145, 1);
+      }
+      .price-section-detailed {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0px 40px;
+      }
+      .price-h4 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: Inter;
+        color: rgba(18, 19, 22, 1);
+      }
+      .price-details-text {
+        position: relative;
+
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(63, 65, 69, 1);
+      }
+      .price-details-text::before {
+        content: "";
+        position: absolute;
+        display: block;
+        left: -40px;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        background-image: url(images/check.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .price-button {
+        width: 336px;
+        height: 48px;
+        background-color: rgba(164, 209, 226, 1);
+        border-radius: 24px;
+        text-align: center;
+        font-family: Inter;
+        font-weight: 600;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo {
+        display: flex;
+        justify-content: space-between;
+        padding: 80px 120px;
+      }
+      .logo1 {
+        display: flex;
+        gap: 20px;
+      }
+      .logof {
+        background-color: rgba(250, 251, 252, 1);
+        padding: 10px 20px;
+        border-radius: 22px;
+        width: 167px;
+        color: rgba(105, 114, 181, 1);
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 700;
+        display: flex;
+        gap: 10px;
+      }
+      .logof::before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url(images/facebook.png);
+        background-size: contain;
+      }
+    </style>
+  </head>
+
+  <body style="margin: 0">
+    <div style="width: 1440px margin 0 auto">
+      <div
+        style="
+          background-image: url(images/HeroImage.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        "
+      >
+        <!-- hero -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 118px;
+          "
+        >
+          <div style="width: 101px; height: 35px">
+            <img src="images/logo 1 (1).png" width="101px" height="35px" />
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              gap: 24px;
+              font-family: Inter;
+              font-weight: 600;
+              color: #ffffff;
+              font-size: 18px;
+              align-items: center;
+              padding-top: 11px;
+            "
+          >
+            <div>Home</div>
+            <div>About</div>
+            <div>Contact</div>
+            <div>Icon</div>
+          </div>
+          <div
+            style="
+              background-color: #ffffff;
+              border: 0;
+              color: white;
+              border-radius: 24px;
+              padding: 13px 13px;
+            "
+          >
+            <div
+              style="
+                color: #000000;
+                font-size: 14px;
+                font-weight: 600;
+                font-family: Inter;
+              "
+            >
+              EN
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 210px;
+            padding-top: 169px;
+            padding-left: 410.5px;
+            padding-right: 411.5px;
+          "
+        >
+          <div
+            style="
+              font-size: 80px;
+              font-weight: 400;
+              color: #e8edf2b8;
+              font-family: Bebas Neue;
+            "
+          >
+            PURE MAGIC
+          </div>
+          <div
+            style="
+              font-size: 250px;
+              font-weight: 400;
+              color: #fdfdfefa;
+              font-family: Bebas Neue;
+            "
+          >
+            AWAITS!
+          </div>
+          <div
+            style="
+              font-size: 64px;
+              font-weight: 900;
+              color: #ffffff;
+              font-family: Hanuman;
+            "
+          >
+            2024
+          </div>
+        </div>
+      </div>
+      <!-- Location -->
+      <div
+        class="location-container"
+        style="
+          background-image: url(images/Location\ image.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        "
+      >
+        <div
+          class="location"
+          style="background-image: url(images/location1.png)"
+        >
+          <div class="location-text">Terkhiin Tsagaan Lake</div>
+          <div class="location-bg"></div>
+        </div>
+        <div
+          class="location"
+          style="background-image: url(images/location1.png)"
+        >
+          <div class="location-text">Terkhiin Tsagaan Lake</div>
+          <div class="location-bg"></div>
+        </div>
+        <div
+          class="location"
+          style="background-image: url(images/location1.png)"
+        >
+          <div class="location-text">Terkhiin Tsagaan Lake</div>
+          <div class="location-bg"></div>
+        </div>
+        <div
+          class="location"
+          style="background-image: url(images/location1.png)"
+        >
+          <div class="location-text">Terkhiin Tsagaan Lake</div>
+          <div class="location-bg"></div>
+        </div>
+      </div>
+      <!-- Roadmap -->
+      <!-- Road-map start -->
+      <div class="destination-container">
+        <h2 class="destination-header">Destination of Our Agency</h2>
+        <p class="destination-p">Pack your bags and get ready</p>
+        <div style="padding: 118px 120px">
+          <div class="destination">
+            <div class="destination-text">
+              Sukhbaatar square
+              <div class="destination-location"></div>
+              <div class="destination-city">Ulaanbator</div>
+            </div>
+            <div class="destination-day">DAY 1</div>
+            <div
+              class="destination-image"
+              style="
+                top: 125px;
+                right: 143px;
+                background-image: url(images/talbai.png);
+              "
+            ></div>
+          </div>
+          <div
+            class="destination"
+            style="background-color: rgba(139, 184, 193, 0.8)"
+          >
+            <div class="destination-text">
+              Amarbaysgalant monastery
+              <div class="destination-location"></div>
+              <div class="destination-city">Bulgan</div>
+            </div>
+            <div class="destination-day">DAY 1</div>
+            <div
+              class="destination-image"
+              style="
+                top: 125px;
+                right: 143px;
+                background-image: url(images/talbai.png);
+              "
+            ></div>
+          </div>
+          <div
+            class="destination"
+            style="background-color: rgba(170, 216, 215, 0.8)"
+          >
+            <div class="destination-text">
+              Khorgiin togoo
+              <div class="destination-location"></div>
+              <div class="destination-city">Arkhangai</div>
+            </div>
+            <div class="destination-day">DAY 1</div>
+            <div
+              class="destination-image"
+              style="
+                top: 125px;
+                right: 143px;
+                background-image: url(images/talbai.png);
+              "
+            ></div>
+          </div>
+          <div
+            class="destination"
+            style="background-color: rgba(139, 192, 189, 0.8)"
+          >
+            <div class="destination-text">
+              Terkhiin tsagaan lakes
+              <div class="destination-location"></div>
+              <div class="destination-city">Arkhangai</div>
+            </div>
+            <div class="destination-day">DAY 1</div>
+            <div
+              class="destination-image"
+              style="
+                top: 125px;
+                right: 143px;
+                background-image: url(images/talbai.png);
+              "
+            ></div>
+          </div>
+          <div
+            class="destination"
+            style="background-color: rgba(151, 204, 224, 0.8)"
+          >
+            <div class="destination-text">
+              Khuvsgul lake
+              <div class="destination-location"></div>
+              <div class="destination-city">Khuvsgul</div>
+            </div>
+            <div class="destination-day">DAY 1</div>
+            <div
+              class="destination-image"
+              style="
+                top: 125px;
+                right: 143px;
+                background-image: url(images/talbai.png);
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- Road-map end -->
+      <!-- Footer -->
+      <!-- Footer-start -->
+      <div class="price-container">
+        <h3 class="price-h3">Pricing of Our Agency</h3>
+        <p class="price-p">Choose a package that's right for you</p>
+        <!-- Package Card start -->
+        <div class="price-card">
+          <div class="price">
+            <div class="price-content-header">
+              <div class="price-icon-button">icon</div>
+              <div class="price-header-text">Budget Package</div>
+            </div>
+            <div class="price-content">
+              <div class="price-details">
+                <div class="price-section">
+                  <div class="price-500">500$</div>
+                  <div class="price-es">Essentials Covered</div>
+                </div>
+                <div class="price-section-detailed">
+                  <h4 class="price-h4">Includes:</h4>
+
+                  <div class="price-details-text">
+                    Group transportation (shared van/bus)
+                  </div>
+                  <div class="price-details-text">
+                    Standard accommodation (yurt or guesthouse)
+                  </div>
+                  <div class="price-details-text">Guided lake tour</div>
+                  <div class="price-details-text">
+                    1 meal per day (breakfast)
+                  </div>
+                </div>
+              </div>
+              <div class="price-button">Select package</div>
+            </div>
+          </div>
+
+          <!-- Package card end -->
+          <div class="price">
+            <div class="price-content-header">
+              <div class="price-icon-button">icon</div>
+              <div class="price-header-text">Standard Package</div>
+            </div>
+            <div class="price-content">
+              <div class="price-details">
+                <div class="price-section">
+                  <div class="price-500">800$</div>
+                  <div class="price-es">Balanced Adventure</div>
+                </div>
+                <div class="price-section-detailed">
+                  <h4 class="price-h4">Includes:</h4>
+
+                  <div class="price-details-text">
+                    Comfortable transportation (mini-bus)
+                  </div>
+                  <div class="price-details-text">
+                    Mid-range accommodation (private yurt or lodge)
+                  </div>
+                  <div class="price-details-text">
+                    Guided lake tour + nearby hiking
+                  </div>
+                  <div class="price-details-text">
+                    2 meals per day (breakfast and dinner)
+                  </div>
+                </div>
+              </div>
+              <div class="price-button">Select package</div>
+            </div>
+          </div>
+          <div class="price">
+            <div class="price-content-header">
+              <div class="price-icon-button">icon</div>
+              <div class="price-header-text">Luxury Package</div>
+            </div>
+            <div class="price-content">
+              <div class="price-details">
+                <div class="price-section">
+                  <div class="price-500">1200$</div>
+                  <div class="price-es">Ultimate Comfort</div>
+                </div>
+                <div class="price-section-detailed">
+                  <h4 class="price-h4">Includes:</h4>
+
+                  <div class="price-details-text">
+                    Private transportation (SUV)
+                  </div>
+                  <div class="price-details-text">
+                    Luxury accommodation (lakefront lodge)
+                  </div>
+                  <div class="price-details-text">
+                    Guided tours (lake + reindeer herder experience)
+                  </div>
+                  <div class="price-details-text">
+                    All meals included (local cuisine)
+                  </div>
+                </div>
+              </div>
+              <div class="price-button">Select package</div>
+            </div>
+          </div>
+        </div>
+        <!-- Logo -->
+        <div class="logo">
+          <div class="logo1">
+            <a class="logof" href="facebook.com">facebook</a>
+            <a class="logof" href="instagram.com">instagram</a>
+          </div>
+          <div>icon</div>
+        </div>
+      </div>
+      <!-- Footer-end -->
+    </div>
+  </body>
+  <!-- Project-body end -->
+</html>
